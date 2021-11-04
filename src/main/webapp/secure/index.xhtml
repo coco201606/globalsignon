@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Global Session Management</title>
+    </h:head>
+    <h:body>
+        <f:metadata>
+            <f:viewParam name="redirect-to" value="#{redirectBean.redirectTo}" />
+            <f:viewAction action="#{redirectBean.setCookie()}"/>
+        </f:metadata>
+        You are successfully logged in.
+        <br/>
+        CallerPrincipal = #{redirectBean.securityContext.callerPrincipal.name}
+        <br/>
+        USER ROLE = #{redirectBean.securityContext.isCallerInRole("USER")}
+        <br/>
+        ADMIN ROLE = #{redirectBean.securityContext.isCallerInRole("ADMIN")}
+        <br/>
+        リダイレクト先＝#{redirectBean.redirectTo}
+        <br/>
+        <h:form>
+            <h:outputLink value="#{redirectBean.redirectTo}">
+                <h:outputText value="アプリケーションに戻る"/>
+            </h:outputLink>
+        </h:form>
+    </h:body>
+</html>
+
