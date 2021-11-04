@@ -1,4 +1,4 @@
-# Project ohashi/GlobalSession
+# Project ohashi/GlobalSignOn
 
 Steps to run this project:
 
